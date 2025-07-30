@@ -125,7 +125,7 @@ export const HeroSection = () => {
     <section
       id="hero"
       data-section="hero"
-      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-indigo-900/20 px-4 sm:px-6 relative overflow-hidden"
+      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-gray-50 via-blue-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-indigo-900/20 px-4 sm:px-6 relative"
     >
       {/* Elementos decorativos futuristas con parallax */}
       <motion.div

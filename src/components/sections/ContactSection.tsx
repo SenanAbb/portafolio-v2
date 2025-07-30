@@ -121,7 +121,7 @@ export const ContactSection = () => {
     <section
       id="contact"
       data-section="contact"
-      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-blue-50 via-gray-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-indigo-900/20 px-4 sm:px-6 relative overflow-hidden"
+      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-blue-50 via-gray-50 to-indigo-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-indigo-900/20 px-4 sm:px-6 relative"
     >
       {/* Elementos decorativos futuristas */}
       <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-36 sm:w-54 md:w-72 h-36 sm:h-54 md:h-72 bg-gradient-to-r from-blue-400/25 to-cyan-400/25 rounded-full blur-3xl animate-pulse"></div>

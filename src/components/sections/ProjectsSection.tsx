@@ -97,7 +97,7 @@ export const ProjectsSection = () => {
     <section
       id="projects"
       data-section="projects"
-      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-gray-50 via-blue-50 to-white dark:from-gray-900 dark:via-blue-900/20 dark:to-gray-800 px-4 sm:px-6 relative overflow-hidden"
+      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-gray-50 via-blue-50 to-white dark:from-gray-900 dark:via-blue-900/20 dark:to-gray-800 px-4 sm:px-6 relative"
     >
       {/* Elementos decorativos futuristas */}
       <div className="absolute top-6 sm:top-12 left-6 sm:left-12 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-gradient-to-r from-indigo-400/20 to-purple-400/20 rounded-full blur-2xl animate-pulse"></div>

@@ -76,7 +76,7 @@ export const ExperienceSection = () => {
     <section
       id="experience"
       data-section="experience"
-      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20 px-4 sm:px-6 relative overflow-hidden"
+      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-gray-800 dark:to-blue-900/20 px-4 sm:px-6 relative"
     >
       {/* Elementos decorativos futuristas */}
       <div className="absolute top-10 sm:top-20 left-1/4 w-28 sm:w-40 md:w-56 h-28 sm:h-40 md:h-56 bg-gradient-to-r from-purple-400/30 to-pink-400/30 rounded-full blur-2xl animate-pulse"></div>

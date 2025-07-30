@@ -66,7 +66,7 @@ export const SkillsSection = () => {
     <section
       id="skills"
       data-section="skills"
-      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-gray-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-gray-800 px-4 sm:px-6 relative overflow-hidden"
+      className="min-h-screen w-screen flex-shrink-0 snap-start flex items-center justify-center bg-gradient-to-br from-white via-blue-50 to-gray-50 dark:from-gray-900 dark:via-blue-900/20 dark:to-gray-800 px-4 sm:px-6 relative"
     >
       {/* Elementos decorativos futuristas */}
       <div className="absolute top-8 sm:top-16 right-8 sm:right-16 w-30 sm:w-45 md:w-60 h-30 sm:h-45 md:h-60 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 rounded-full blur-2xl animate-pulse"></div>
