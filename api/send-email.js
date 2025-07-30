@@ -1,7 +1,5 @@
 import { TransactionalEmailsApi, SendSmtpEmail } from '@getbrevo/brevo';
-
-const emailAPI = new TransactionalEmailsApi();
-emailAPI.authentications.apiKey.apiKey = process.env.VITE_BREVO_API_KEY;
+import { Resend } from 'resend';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -19,31 +17,15 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid email format' });
   }
 
-  const mail = new SendSmtpEmail();
-  mail.subject = 'Mensaje desde portafolio';
-  mail.textContent = `
-    Has recibido un mensaje desde tu portafolio:
-    Nombre: ${name}
-    Email: ${email}
-    Mensaje: ${message}
-  `;
-  mail.sender = {
-    name: 'Portafolio Web', // Nombre personalizado
-    email: 'senan996@gmail.com', // ⛔ Usa aquí un correo verificado en Brevo
-  };
-  mail.replyTo = {
-    email,
-    name,
-  };
-  mail.to = [
-    {
-      email: 'senan996@gmail.com',
-      name: 'Senan Abbasov',
-    },
-  ];
+  const resend = new Resend(process.env.VITE_RESEND_API_KEY);
 
   try {
-    await emailAPI.sendTransacEmail(mail);
+    await resend.emails.send({
+      from: 'Portafolio <senan996@gmail.com>',
+      to: 'senan996@gmail.com',
+      subject: 'New email from portafolio',
+      html: '<h1>New email from portafolio</h1><p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>',
+    });
     return res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
     console.error('Send error:', error?.response?.body || error.message);
