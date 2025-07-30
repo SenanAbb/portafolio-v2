@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { fadeInUp, fadeInLeft, fadeInRight } from '../../constants/animations';
+import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -98,22 +99,25 @@ export const ContactSection = () => {
 
   const contactMethods = [
     {
-      icon: '📧',
+      icon: <AiFillMail />,
       label: 'Email',
       value: 'senan@gmail.com',
       gradient: 'from-blue-500 to-cyan-500',
+      link: 'mailto:senan@gmail.com',
     },
     {
-      icon: '💼',
+      icon: <AiFillLinkedin />,
       label: 'LinkedIn',
       value: 'linkedin.com/in/sanan-abbasov/',
       gradient: 'from-blue-600 to-blue-700',
+      link: 'https://linkedin.com/in/sanan-abbasov/',
     },
     {
-      icon: '🐙',
+      icon: <AiFillGithub />,
       label: 'GitHub',
       value: 'github.com/SenanAbb',
       gradient: 'from-gray-700 to-gray-900',
+      link: 'https://github.com/SenanAbb',
     },
   ];
 
@@ -226,6 +230,7 @@ export const ContactSection = () => {
                   className="flex items-center space-x-4 group cursor-pointer"
                   whileHover={{ scale: 1.05, x: 10 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+                  onClick={() => window.open(method.link, '_blank')}
                 >
                   <div
                     className={`w-12 h-12 bg-gradient-to-r ${method.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300`}

@@ -150,7 +150,7 @@ export const AboutSection = () => {
                 style={{ fontSize: 'clamp(0.75rem, 2vw, 0.875rem)' }}
               >
                 <span>{tab.icon}</span>
-                <span className="hidden sm:inline">{tab.label}</span>
+                <span>{tab.label}</span>
               </button>
             ))}
           </div>

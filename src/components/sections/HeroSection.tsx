@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { TypeAnimation } from 'react-type-animation';
 import { fadeInUp, staggerContainer } from '../../constants/animations';
+import { AiFillGithub, AiFillLinkedin } from 'react-icons/ai';
 
 // Hook para seguimiento del mouse
 const useMousePosition = () => {
@@ -257,6 +258,44 @@ export const HeroSection = () => {
             <span className="relative z-10 flex items-center justify-center space-x-2">
               <span>Descargar CV</span>
               <span className="text-lg">📄</span>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </motion.button>
+          <motion.button
+            className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-xl font-medium hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300 text-sm sm:text-base relative overflow-hidden group backdrop-blur-sm"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '0 20px 40px rgba(59, 130, 246, 0.4)',
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+            onClick={() => window.open('https://github.com/SenanAbb', '_blank')}
+          >
+            <span className="relative z-10 flex items-center justify-center space-x-2">
+              <span>Github</span>
+              <span className="text-2xl">
+                <AiFillGithub />
+              </span>
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </motion.button>
+          <motion.button
+            className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 rounded-xl font-medium hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300 text-sm sm:text-base relative overflow-hidden group backdrop-blur-sm"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '0 20px 40px rgba(59, 130, 246, 0.4)',
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 10 }}
+            onClick={() =>
+              window.open('https://www.linkedin.com/in/sanan-abbasov/', '_blank')
+            }
+          >
+            <span className="relative z-10 flex items-center justify-center space-x-2">
+              <span>LinkedIn</span>
+              <span className="text-2xl">
+                <AiFillLinkedin />
+              </span>
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </motion.button>
