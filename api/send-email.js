@@ -1,7 +1,7 @@
-import sgMail from '@sendgrid/mail';
+import { TransactionalEmailsApi, SendSmtpEmail } from '@getbrevo/brevo';
 
-sgMail.setApiKey(process.env.VITE_SENDGRID_API_KEY);
-
+let emailAPI = new TransactionalEmailsApi();
+emailAPI.authentications.apiKey.apiKey = process.env.VITE_BREVO_API_KEY;
 /**
  * Vercel Serverless Function
  */
@@ -21,19 +21,14 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Invalid email format' });
   }
 
-  const msg = {
-    to: process.env.VITE_SENDGRID_EMAIL_TO,
-    from: process.env.VITE_SENDGRID_EMAIL_FROM,
-    subject: `New message from ${name}`,
-    html: `
-      <h3>New message from ${name}</h3>
-      <p><strong>Email:</strong> ${email}</p>
-      <p>${message}</p>
-    `,
-  };
+  let mail = new SendSmtpEmail();
+  mail.subject = 'Mensaje desde portafolio';
+  mail.textContent = message;
+  mail.sender = { name, email };
+  mail.to = [{ email: 'senan996@gmail.com', name: 'Senan Abbasov' }];
 
   try {
-    await sgMail.send(msg);
+    await emailAPI.sendTransacEmail(message);
     return res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
     console.error('Send error:', error?.response?.body || error.message);
