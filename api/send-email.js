@@ -20,10 +20,10 @@ export default async function handler(req, res) {
 
   try {
     await resend.emails.send({
-      from: 'Portafolio <senan996@gmail.com>',
+      from: 'Portafolio <onboarding@resend.dev>',
       to: 'senan996@gmail.com',
       subject: 'New email from portafolio',
-      html: '<h1>New email from portafolio</h1><p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>',
+      html: `<h1>New email from portafolio</h1><p>Name: ${name}</p><p>Email: ${email}</p><p>Message: ${message}</p>`,
     });
     return res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
