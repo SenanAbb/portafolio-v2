@@ -10,9 +10,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
 
-  const { name, lastname, phone, email, message } = req.body || {};
+  const { name, email, message } = req.body || {};
 
-  if (!name || !lastname || !phone || !email || !message) {
+  if (!name || !email || !message) {
     return res.status(400).json({ error: 'Missing required fields' });
   }
 
@@ -24,11 +24,10 @@ export default async function handler(req, res) {
   const msg = {
     to: process.env.VITE_SENDGRID_EMAIL_TO,
     from: process.env.VITE_SENDGRID_EMAIL_FROM,
-    subject: `New message from ${name} ${lastname}`,
+    subject: `New message from ${name}`,
     html: `
-      <h3>New message from ${name} ${lastname}</h3>
+      <h3>New message from ${name}</h3>
       <p><strong>Email:</strong> ${email}</p>
-      <p><strong>Phone:</strong> ${phone}</p>
       <p>${message}</p>
     `,
   };
