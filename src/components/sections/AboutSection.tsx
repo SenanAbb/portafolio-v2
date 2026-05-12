@@ -50,6 +50,8 @@ const education = [
 ];
 
 export const AboutSection = () => {
+  const year = new Date().getFullYear();
+
   return (
     <section
       id="about"
@@ -62,15 +64,15 @@ export const AboutSection = () => {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
           variants={staggerContainer}
-          className="grid grid-cols-12 gap-6 md:gap-10"
+          className="flex flex-col"
         >
-          <motion.div variants={fadeInUp} className="col-span-12 mb-8">
+          <motion.div variants={fadeInUp} className="mb-8">
             <span className="section-label">02 / Sobre mí</span>
           </motion.div>
 
           <motion.h2
             variants={fadeInUp}
-            className="col-span-12 lg:col-span-8 font-display font-black uppercase text-balance leading-[0.9] tracking-tight"
+            className="font-display font-black uppercase text-balance leading-[0.9] tracking-tight max-w-5xl"
             style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}
           >
             Construyo <span className="text-accent">software</span> con propósito.
@@ -78,102 +80,127 @@ export const AboutSection = () => {
 
           <motion.div
             variants={fadeInUp}
-            className="col-span-12 lg:col-span-7 lg:col-start-1 mt-8 space-y-5 text-base sm:text-lg text-muted-fg leading-relaxed"
+            className="mt-12 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8"
           >
-            <p>
-              Desarrollador Full Stack con base en Málaga. Diseño y construyo
-              aplicaciones web modernas, escalables y accesibles. Mi enfoque:
-              <span className="text-fg"> código limpio</span>,
-              <span className="text-fg"> UX intencional</span> y
-              <span className="text-fg"> performance medida</span>.
-            </p>
-            <p>
-              Vengo de la Ingeniería de Software académica y la complemento con
-              formación intensiva práctica. Trabajo cómodo en cualquier punto del
-              stack — del esquema de base de datos al pixel de la animación.
-            </p>
-          </motion.div>
+            <aside className="lg:col-span-4 border-2 border-border bg-bg flex flex-col">
+              <div className="relative w-full aspect-[4/5] overflow-hidden border-b-2 border-border bg-muted">
+                <img
+                  src="/images/photo.webp"
+                  alt="Sanan Abbasov"
+                  loading="lazy"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute top-3 left-3 chip bg-bg">
+                  Sanan / {year}
+                </div>
+              </div>
 
-          <motion.aside
-            variants={fadeInUp}
-            className="col-span-12 lg:col-span-4 lg:col-start-9 lg:row-start-3 border-2 border-border p-6 space-y-5 self-start"
-          >
-            <div>
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mb-2">
-                Contacto
-              </p>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center gap-3">
-                  <HiLocationMarker className="w-4 h-4 text-accent flex-shrink-0" />
-                  <span>{personalInfo.location}</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <HiMail className="w-4 h-4 text-accent flex-shrink-0" />
-                  <a href={`mailto:${personalInfo.email}`} className="hover:text-accent transition-colors break-all">
-                    {personalInfo.email}
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <HiGlobe className="w-4 h-4 text-accent flex-shrink-0" />
-                  <a
-                    href={`https://${personalInfo.linkedin}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="hover:text-accent transition-colors break-all"
-                  >
-                    {personalInfo.linkedin}
-                  </a>
-                </li>
-              </ul>
-            </div>
+              <div className="p-5 sm:p-6 flex flex-col gap-4">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mb-1">
+                    Perfil
+                  </p>
+                  <h3 className="font-display font-black uppercase tracking-tight text-xl sm:text-2xl leading-tight">
+                    Sanan Abbasov
+                  </h3>
+                  <p className="font-mono text-xs text-accent uppercase tracking-widest mt-1">
+                    Full Stack Developer
+                  </p>
+                </div>
 
-            <div className="border-t border-muted pt-5">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mb-3">
-                Idiomas
-              </p>
-              <ul className="space-y-2 text-sm">
-                {languages.map((l) => (
-                  <li key={l.name} className="flex items-center justify-between">
-                    <span>{l.name}</span>
-                    <span className="font-mono text-[10px] uppercase text-muted-fg">
-                      {l.level}
-                    </span>
+                <ul className="space-y-2.5 text-sm border-t-2 border-border pt-4">
+                  <li className="flex items-center gap-3">
+                    <HiLocationMarker className="w-4 h-4 text-accent flex-shrink-0" />
+                    <span>{personalInfo.location}</span>
                   </li>
-                ))}
-              </ul>
-            </div>
-          </motion.aside>
+                  <li className="flex items-center gap-3">
+                    <HiMail className="w-4 h-4 text-accent flex-shrink-0" />
+                    <a
+                      href={`mailto:${personalInfo.email}`}
+                      className="hover:text-accent transition-colors break-all"
+                    >
+                      {personalInfo.email}
+                    </a>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <HiGlobe className="w-4 h-4 text-accent flex-shrink-0" />
+                    <a
+                      href={`https://${personalInfo.linkedin}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-accent transition-colors break-all"
+                    >
+                      {personalInfo.linkedin}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
 
-          <motion.div variants={fadeInUp} className="col-span-12 mt-16 grid grid-cols-1 md:grid-cols-2 gap-px bg-border border-2 border-border">
-            <div className="bg-bg p-6 sm:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mb-5">
-                Soft skills
-              </p>
-              <ul className="flex flex-wrap gap-2">
-                {softSkills.map((s) => (
-                  <li key={s} className="chip">{s}</li>
-                ))}
-              </ul>
-            </div>
+            <div className="lg:col-span-8 flex flex-col gap-6">
+              <div className="border-2 border-border bg-bg p-6 sm:p-8 space-y-5 text-base sm:text-lg text-fg/80 leading-relaxed">
+                <p>
+                  Desarrollador Full Stack con base en Málaga. Diseño y construyo
+                  aplicaciones web modernas, escalables y accesibles. Mi enfoque:
+                  <span className="text-fg font-semibold"> código limpio</span>,
+                  <span className="text-fg font-semibold"> UX intencional</span> y
+                  <span className="text-fg font-semibold"> performance medida</span>.
+                </p>
+                <p>
+                  Vengo de la Ingeniería de Software académica y la complemento con
+                  formación intensiva práctica. Trabajo cómodo en cualquier punto del
+                  stack — del esquema de base de datos al pixel de la animación.
+                </p>
+              </div>
 
-            <div className="bg-bg p-6 sm:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mb-5 flex items-center gap-2">
-                <HiAcademicCap className="w-3 h-3" /> Formación
-              </p>
-              <ul className="space-y-4">
-                {education.map((e) => (
-                  <li key={e.degree} className="border-l-2 border-border pl-4">
-                    <div className="flex items-baseline justify-between gap-2 flex-wrap">
-                      <h4 className="font-display font-bold text-base">{e.degree}</h4>
-                      <span className="font-mono text-[10px] uppercase text-accent">{e.gpa}</span>
-                    </div>
-                    <p className="text-sm text-muted-fg">{e.institution}</p>
-                    <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mt-1">
-                      {e.period}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 flex-1">
+                <div className="border-2 border-border bg-bg p-6 flex flex-col">
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mb-4">
+                    Soft skills
+                  </p>
+                  <ul className="flex flex-wrap gap-2 mb-6">
+                    {softSkills.map((s) => (
+                      <li key={s} className="chip">{s}</li>
+                    ))}
+                  </ul>
+
+                  <div className="border-t-2 border-border pt-4 mt-auto">
+                    <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mb-3">
+                      Idiomas
                     </p>
-                  </li>
-                ))}
-              </ul>
+                    <ul className="space-y-2 text-sm">
+                      {languages.map((l) => (
+                        <li key={l.name} className="flex items-center justify-between">
+                          <span>{l.name}</span>
+                          <span className="font-mono text-[10px] uppercase text-muted-fg">
+                            {l.level}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <div className="border-2 border-border bg-bg p-6">
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mb-4 flex items-center gap-2">
+                    <HiAcademicCap className="w-3 h-3" /> Formación
+                  </p>
+                  <ul className="space-y-4">
+                    {education.map((e) => (
+                      <li key={e.degree} className="border-l-2 border-border pl-4">
+                        <div className="flex items-baseline justify-between gap-2 flex-wrap">
+                          <h4 className="font-display font-bold text-base">{e.degree}</h4>
+                          <span className="font-mono text-[10px] uppercase text-accent">{e.gpa}</span>
+                        </div>
+                        <p className="text-sm text-fg/70">{e.institution}</p>
+                        <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mt-1">
+                          {e.period}
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
             </div>
           </motion.div>
         </motion.div>

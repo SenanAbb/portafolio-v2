@@ -39,16 +39,16 @@ export const HeroSection = () => {
 
           <motion.h1
             variants={fadeInUp}
-            className="font-display font-black uppercase leading-[0.85] tracking-tighter text-balance w-full"
-            style={{ fontSize: 'clamp(3.5rem, 13vw, 12rem)' }}
+            className="font-display font-black uppercase leading-[0.88] tracking-tighter text-balance w-full"
+            style={{ fontSize: 'clamp(2.75rem, 9vw, 8rem)' }}
           >
             Sanan
             <br />
             Abbasov<span className="text-accent">.</span>
           </motion.h1>
 
-          <motion.div variants={fadeInUp} className="mt-12 max-w-3xl">
-            <p className="font-display text-3xl sm:text-4xl md:text-5xl font-bold leading-[1.1]">
+          <motion.div variants={fadeInUp} className="mt-10 max-w-3xl">
+            <p className="font-display text-2xl sm:text-3xl md:text-4xl font-bold leading-[1.1]">
               Soy{' '}
               <span className="text-accent">
                 <TypeAnimation
@@ -59,7 +59,7 @@ export const HeroSection = () => {
                     2000,
                     'Creador digital',
                     2000,
-                    'Solucionador de problemas',
+                    'Apasionado del código',
                     2000,
                   ]}
                   wrapper="span"
@@ -68,7 +68,7 @@ export const HeroSection = () => {
                 />
               </span>
             </p>
-            <p className="mt-8 text-lg sm:text-xl md:text-2xl text-muted-fg max-w-2xl leading-relaxed">
+            <p className="mt-6 text-base sm:text-lg md:text-xl text-muted-fg max-w-2xl leading-relaxed">
               Transformo ideas en experiencias digitales. Especializado en
               aplicaciones web modernas con foco en performance, accesibilidad
               y diseño intencional.
@@ -126,7 +126,7 @@ export const HeroSection = () => {
               </div>
               <div
                 className="font-display font-black leading-none mb-3 tracking-tighter"
-                style={{ fontSize: 'clamp(2.75rem, 6vw, 5rem)' }}
+                style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)' }}
               >
                 {s.value}
               </div>
