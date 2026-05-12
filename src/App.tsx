@@ -7,14 +7,13 @@ import { ExperienceSection } from './components/sections/ExperienceSection';
 import { SkillsSection } from './components/sections/SkillsSection';
 import { ProjectsSection } from './components/sections/ProjectsSection';
 import { ContactSection } from './components/sections/ContactSection';
+import { Footer } from './components/Footer';
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen bg-bg text-fg font-sans">
       <Navbar />
-
-      {/* Desktop: Carousel horizontal */}
-      <main className="hidden md:flex md:h-screen md:overflow-x-auto md:overflow-y-hidden md:scroll-smooth snap-x snap-mandatory scrollbar-hide">
+      <main>
         <HeroSection />
         <AboutSection />
         <ExperienceSection />
@@ -22,16 +21,7 @@ export default function Home() {
         <ProjectsSection />
         <ContactSection />
       </main>
-
-      {/* Mobile: Scroll vertical */}
-      <main className="md:hidden flex flex-col">
-        <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
-      </main>
-    </>
+      <Footer />
+    </div>
   );
 }
