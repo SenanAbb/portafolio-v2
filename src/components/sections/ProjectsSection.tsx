@@ -81,7 +81,7 @@ export const ProjectsSection = () => {
           <motion.h2
             variants={fadeInUp}
             className="col-span-12 font-display font-black uppercase tracking-tighter leading-[0.9]"
-            style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}
+            style={{ fontSize: 'clamp(2rem, 5.5vw, 4.5rem)' }}
           >
             Trabajo <span className="text-accent">selecto</span>.
           </motion.h2>
@@ -100,7 +100,7 @@ export const ProjectsSection = () => {
                     <div className="col-span-12 md:col-span-1">
                       <div
                         className="font-display font-black leading-none tracking-tighter"
-                        style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}
+                        style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
                       >
                         {String(p.id).padStart(2, '0')}
                       </div>
@@ -118,7 +118,7 @@ export const ProjectsSection = () => {
 
                       <h3
                         className="font-display font-black uppercase tracking-tight leading-[0.95] mb-4"
-                        style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.75rem)' }}
+                        style={{ fontSize: 'clamp(1.4rem, 2.5vw, 2.25rem)' }}
                       >
                         {p.title}
                       </h3>

@@ -114,7 +114,7 @@ export const ContactSection = () => {
           <motion.h2
             variants={fadeInUp}
             className="font-display font-black uppercase tracking-tighter leading-[0.85] text-balance"
-            style={{ fontSize: 'clamp(3rem, 11vw, 10rem)' }}
+            style={{ fontSize: 'clamp(2.5rem, 8vw, 7rem)' }}
           >
             Hablemos<span className="text-accent">.</span>
           </motion.h2>

@@ -92,7 +92,7 @@ export const ExperienceSection = () => {
           <motion.h2
             variants={fadeInUp}
             className="col-span-12 font-display font-black uppercase tracking-tighter leading-[0.9]"
-            style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}
+            style={{ fontSize: 'clamp(2rem, 5.5vw, 4.5rem)' }}
           >
             Trayecto<span className="text-accent">.</span>
           </motion.h2>

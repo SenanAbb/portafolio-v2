@@ -36,12 +36,12 @@
     -webkit-text-size-adjust: 100%;
     background-color: rgb(var(--bg));
     color: rgb(var(--fg));
-    font-size: 17px;
+    font-size: 15px;
   }
 
   @media (min-width: 768px) {
     html {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 

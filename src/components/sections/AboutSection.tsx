@@ -73,7 +73,7 @@ export const AboutSection = () => {
           <motion.h2
             variants={fadeInUp}
             className="font-display font-black uppercase text-balance leading-[0.9] tracking-tight max-w-5xl"
-            style={{ fontSize: 'clamp(2.5rem, 7vw, 6rem)' }}
+            style={{ fontSize: 'clamp(2rem, 5.5vw, 4.5rem)' }}
           >
             Construyo <span className="text-accent">software</span> con propósito.
           </motion.h2>
