@@ -123,8 +123,8 @@ export const ContactSection = () => {
             variants={fadeInUp}
             className="text-lg sm:text-xl text-fg/80 leading-relaxed mt-8 max-w-xl"
           >
-            Abierto a oportunidades, colaboraciones o simplemente charlar sobre
-            tecnología. Respuesta en menos de 24 h.
+            Abierto a proyectos freelance, colaboraciones o simplemente charlar
+            sobre tecnología. Respuesta en menos de 24 h.
           </motion.p>
 
           <motion.ul

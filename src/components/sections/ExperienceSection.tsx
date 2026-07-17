@@ -26,12 +26,12 @@ const experiences = [
     company: 'Bosonit',
     period: 'nov. 2025 — jul. 2026',
     description:
-      'Desarrollo full stack para el Gobierno de La Rioja: plataforma de datos del sector vitivinícola y gateway SSO federado sobre un clúster Big Data. Front Angular, back Spring Boot, integración de identidad y despliegue en contenedores.',
-    technologies: ['Angular', 'Spring Boot', 'Keycloak', 'Apache Ambari', 'PostGIS', 'Elasticsearch', 'Docker'],
+      'Desarrollo full stack en proyectos de cliente, del front al back y el despliegue. Aplicaciones web con Angular y Spring Boot, integración de identidad y autenticación, plataformas de datos y infraestructura contenerizada.',
+    technologies: ['Angular', 'Spring Boot', 'Java', 'Keycloak', 'Apache Ambari', 'PostgreSQL', 'Docker'],
     achievements: [
-      'Plataforma ENODL de análisis y visualización de datos del vino',
-      'Gateway SSO federado que unifica el acceso al clúster Hadoop',
-      'Integración de flujos de autenticación (CAS, OIDC/Keycloak, JWT)',
+      'Desarrollo full stack de aplicaciones web para cliente',
+      'Integración de SSO y flujos de autenticación (CAS, OIDC/Keycloak, JWT)',
+      'Despliegue en contenedores y trabajo con plataformas Big Data',
     ],
   },
   {
