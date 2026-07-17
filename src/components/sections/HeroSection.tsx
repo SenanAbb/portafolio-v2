@@ -14,10 +14,10 @@ const stats = [
 ];
 
 const terminalLines = [
-  { prompt: '$ whoami', output: ['Sanan Abbasov', 'Full Stack Developer'] },
+  { prompt: '$ whoami', output: ['Sanan Abbasov', 'Ingeniero de Software @ Babel'] },
   { prompt: '$ pwd', output: ['~/malaga/spain'] },
-  { prompt: '$ ls --stack', output: ['react · typescript · node', 'next.js · mongo · mysql'] },
-  { prompt: '$ status --hire', output: ['available'] },
+  { prompt: '$ ls --stack', output: ['java · spring · angular · typescript', 'react · node · next.js · mongo · mysql', 'keycloak · sso · big data · docker'] },
+  { prompt: '$ status --freelance', output: ['available for freelance', 'not open to full-time'] },
 ];
 
 export const HeroSection = () => {
@@ -41,7 +41,7 @@ export const HeroSection = () => {
               <span className="section-label">01 / Inicio</span>
               <span className="font-mono text-xs text-muted-fg flex items-center gap-2">
                 <span className="w-2 h-2 bg-green-500 inline-block animate-pulse" />
-                Disponible para proyectos
+                Disponible para freelance
               </span>
             </motion.div>
 
