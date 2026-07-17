@@ -6,8 +6,10 @@ import { HiArrowRight } from 'react-icons/hi';
 import { fadeInUp, staggerContainer } from '../../constants/animations';
 
 const experiences = [
+  // Experiencia laboral (reverse-cronológico)
   {
     id: 1,
+    type: 'work',
     title: 'Ingeniero de Software',
     company: 'Babel',
     period: 'jul. 2026 — Presente',
@@ -22,11 +24,12 @@ const experiences = [
   },
   {
     id: 2,
+    type: 'work',
     title: 'Desarrollador Full Stack',
     company: 'Bosonit',
     period: 'nov. 2025 — jul. 2026',
     description:
-      'Desarrollo full stack en proyectos de cliente, del front al back y el despliegue. Aplicaciones web con Angular y Spring Boot, integración de identidad y autenticación, plataformas de datos y infraestructura contenerizada.',
+      'Desarrollo full stack en proyectos de cliente, del front al back y el despliegue. Aplicaciones web con Angular y Spring Boot, integración de identidad y autenticación, plataformas de datos e infraestructura contenerizada.',
     technologies: ['Angular', 'Spring Boot', 'Java', 'Keycloak', 'Apache Ambari', 'PostgreSQL', 'Docker'],
     achievements: [
       'Desarrollo full stack de aplicaciones web para cliente',
@@ -35,21 +38,8 @@ const experiences = [
     ],
   },
   {
-    id: 3,
-    title: 'Empleado en Prácticas',
-    company: 'Bosonit',
-    period: 'oct. 2025 — nov. 2025',
-    description:
-      'Prácticas de desarrollo en modalidad híbrida (Málaga, Andalucía). Fundamentos de backend con Java y bases de datos relacionales dentro de proyectos reales.',
-    technologies: ['Java', 'PostgreSQL', 'Spring Boot', 'Docker', 'Git'],
-    achievements: [
-      'Onboarding técnico en proyectos de cliente',
-      'Backend con Java y PostgreSQL',
-      'Metodologías de trabajo en equipo',
-    ],
-  },
-  {
     id: 4,
+    type: 'work',
     title: 'Full Stack Web Developer',
     company: 'Freelance',
     period: '2023 — Presente',
@@ -64,6 +54,7 @@ const experiences = [
   },
   {
     id: 5,
+    type: 'work',
     title: 'Desarrollador Full Stack',
     company: 'Wiper Gaming',
     period: '2023',
@@ -76,9 +67,26 @@ const experiences = [
       'Conexión con APIs de estadísticas en tiempo real',
     ],
   },
+  // Formación (reverse-cronológico)
+  {
+    id: 3,
+    type: 'education',
+    title: 'Empleado en Prácticas',
+    company: 'Bosonit',
+    period: 'oct. 2025 — nov. 2025',
+    description:
+      'Prácticas de desarrollo en modalidad híbrida (Málaga, Andalucía). Fundamentos de backend con Java y bases de datos relacionales dentro de proyectos reales.',
+    technologies: ['Java', 'PostgreSQL', 'Spring Boot', 'Docker', 'Git'],
+    achievements: [
+      'Onboarding técnico en proyectos de cliente',
+      'Backend con Java y PostgreSQL',
+      'Metodologías de trabajo en equipo',
+    ],
+  },
   {
     id: 6,
-    title: 'Estudiante Full Stack',
+    type: 'education',
+    title: 'Bootcamp Full Stack',
     company: 'SocraTech',
     period: '2024 — 2025',
     description:
@@ -92,6 +100,7 @@ const experiences = [
   },
   {
     id: 7,
+    type: 'education',
     title: 'Ingeniería de Software',
     company: 'Universidad de Málaga',
     period: '2015 — 2021',
@@ -106,9 +115,15 @@ const experiences = [
   },
 ];
 
+const groups = [
+  { key: 'work', label: 'Experiencia' },
+  { key: 'education', label: 'Formación' },
+] as const;
+
 export const ExperienceSection = () => {
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(experiences[0].id);
   const current = experiences.find((e) => e.id === active) || experiences[0];
+  const currentIndex = experiences.findIndex((e) => e.id === active);
 
   return (
     <section
@@ -127,7 +142,7 @@ export const ExperienceSection = () => {
           <motion.div variants={fadeInUp} className="col-span-12 mb-8 flex items-end justify-between gap-4 flex-wrap">
             <span className="section-label">03 / Experiencia</span>
             <span className="font-mono text-xs text-muted-fg">
-              {active} / {experiences.length}
+              {currentIndex + 1} / {experiences.length}
             </span>
           </motion.div>
 
@@ -139,35 +154,46 @@ export const ExperienceSection = () => {
             Trayecto<span className="text-accent">.</span>
           </motion.h2>
 
-          <motion.div variants={fadeInUp} className="col-span-12 lg:col-span-4 mt-8">
-            <ul className="border-2 border-border divide-y-2 divide-border bg-bg">
-              {experiences.map((exp) => {
-                const isActive = active === exp.id;
-                return (
-                  <li key={exp.id}>
-                    <button
-                      onClick={() => setActive(exp.id)}
-                      className={`w-full text-left p-4 sm:p-5 flex items-center gap-4 transition-colors ${
-                        isActive ? 'bg-fg text-bg' : 'hover:bg-muted'
-                      }`}
-                    >
-                      <span className={`font-mono text-xs ${isActive ? 'text-accent' : 'text-muted-fg'}`}>
-                        {String(exp.id).padStart(2, '0')}
-                      </span>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-display font-bold text-base sm:text-lg truncate">
-                          {exp.title}
-                        </p>
-                        <p className={`font-mono text-[10px] uppercase tracking-widest mt-1 ${isActive ? 'text-bg/70' : 'text-muted-fg'}`}>
-                          {exp.company} · {exp.period}
-                        </p>
-                      </div>
-                      {isActive && <HiArrowRight className="w-4 h-4 flex-shrink-0" />}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
+          <motion.div variants={fadeInUp} className="col-span-12 lg:col-span-4 mt-8 space-y-6">
+            {groups.map((group) => {
+              const items = experiences.filter((e) => e.type === group.key);
+              if (items.length === 0) return null;
+              return (
+                <div key={group.key}>
+                  <p className="font-mono text-[10px] uppercase tracking-widest text-muted-fg mb-3">
+                    {group.label}
+                  </p>
+                  <ul className="border-2 border-border divide-y-2 divide-border bg-bg">
+                    {items.map((exp) => {
+                      const isActive = active === exp.id;
+                      return (
+                        <li key={exp.id}>
+                          <button
+                            onClick={() => setActive(exp.id)}
+                            className={`w-full text-left p-4 sm:p-5 flex items-center gap-4 transition-colors ${
+                              isActive ? 'bg-fg text-bg' : 'hover:bg-muted'
+                            }`}
+                          >
+                            <span className={`font-mono text-xs ${isActive ? 'text-accent' : 'text-muted-fg'}`}>
+                              {String(experiences.findIndex((e) => e.id === exp.id) + 1).padStart(2, '0')}
+                            </span>
+                            <div className="flex-1 min-w-0">
+                              <p className="font-display font-bold text-base sm:text-lg truncate">
+                                {exp.title}
+                              </p>
+                              <p className={`font-mono text-[10px] uppercase tracking-widest mt-1 ${isActive ? 'text-bg/70' : 'text-muted-fg'}`}>
+                                {exp.company} · {exp.period}
+                              </p>
+                            </div>
+                            {isActive && <HiArrowRight className="w-4 h-4 flex-shrink-0" />}
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              );
+            })}
           </motion.div>
 
           <motion.div variants={fadeInUp} className="col-span-12 lg:col-span-8 mt-8">
