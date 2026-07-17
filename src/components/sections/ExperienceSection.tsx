@@ -8,6 +8,48 @@ import { fadeInUp, staggerContainer } from '../../constants/animations';
 const experiences = [
   {
     id: 1,
+    title: 'Ingeniero de Software',
+    company: 'Babel',
+    period: 'jul. 2026 — Presente',
+    description:
+      'Ingeniería de software a jornada completa en modalidad híbrida (Málaga, Andalucía). Diseño y desarrollo de soluciones empresariales.',
+    technologies: ['Java', 'Spring Boot', 'Angular', 'TypeScript', 'Docker'],
+    achievements: [
+      'Incorporación al equipo de ingeniería de software',
+      'Desarrollo de soluciones empresariales end-to-end',
+      'Modalidad híbrida · Málaga, Andalucía',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Desarrollador Full Stack',
+    company: 'Bosonit',
+    period: 'nov. 2025 — jul. 2026',
+    description:
+      'Desarrollo full stack para el Gobierno de La Rioja: plataforma de datos del sector vitivinícola y gateway SSO federado sobre un clúster Big Data. Front Angular, back Spring Boot, integración de identidad y despliegue en contenedores.',
+    technologies: ['Angular', 'Spring Boot', 'Keycloak', 'Apache Ambari', 'PostGIS', 'Elasticsearch', 'Docker'],
+    achievements: [
+      'Plataforma ENODL de análisis y visualización de datos del vino',
+      'Gateway SSO federado que unifica el acceso al clúster Hadoop',
+      'Integración de flujos de autenticación (CAS, OIDC/Keycloak, JWT)',
+    ],
+  },
+  {
+    id: 3,
+    title: 'Empleado en Prácticas',
+    company: 'Bosonit',
+    period: 'oct. 2025 — nov. 2025',
+    description:
+      'Prácticas de desarrollo en modalidad híbrida (Málaga, Andalucía). Fundamentos de backend con Java y bases de datos relacionales dentro de proyectos reales.',
+    technologies: ['Java', 'PostgreSQL', 'Spring Boot', 'Docker', 'Git'],
+    achievements: [
+      'Onboarding técnico en proyectos de cliente',
+      'Backend con Java y PostgreSQL',
+      'Metodologías de trabajo en equipo',
+    ],
+  },
+  {
+    id: 4,
     title: 'Full Stack Web Developer',
     company: 'Freelance',
     period: '2023 — Presente',
@@ -21,7 +63,7 @@ const experiences = [
     ],
   },
   {
-    id: 2,
+    id: 5,
     title: 'Desarrollador Full Stack',
     company: 'Wiper Gaming',
     period: '2023',
@@ -35,7 +77,7 @@ const experiences = [
     ],
   },
   {
-    id: 3,
+    id: 6,
     title: 'Estudiante Full Stack',
     company: 'SocraTech',
     period: '2024 — 2025',
@@ -49,7 +91,7 @@ const experiences = [
     ],
   },
   {
-    id: 4,
+    id: 7,
     title: 'Ingeniería de Software',
     company: 'Universidad de Málaga',
     period: '2015 — 2021',

@@ -8,6 +8,26 @@ import { fadeInUp, staggerContainer } from '../../constants/animations';
 const projects = [
   {
     id: 1,
+    title: 'ENODL — Datos del Vino',
+    category: 'Data Platform',
+    description:
+      'Plataforma web para el Gobierno de La Rioja que centraliza y explota los datos del sector vitivinícola (vendimias, bodegas, exportaciones, plagas y cartografía). App monolítica Angular + Spring Boot en contenedores tras un reverse proxy con TLS, con múltiples flujos de auth (CAS, OIDC/Keycloak, JWT) y visualizaciones interactivas sobre un data lake.',
+    tech: ['Angular 17', 'PrimeNG', 'Spring Boot 3.4', 'PostGIS', 'Elasticsearch', 'Docker'],
+    year: '2026',
+    role: 'Equipo Bosonit',
+  },
+  {
+    id: 2,
+    title: 'ENODL Hub — Gateway SSO Federado',
+    category: 'SSO / Big Data',
+    description:
+      'Gateway de acceso federado con Single Sign-On que unifica y protege todas las interfaces de un clúster Big Data (Ambari, Ranger, Hue, Zeppelin, Grafana, Airflow, OpenMetadata) tras un único punto de entrada. Reverse proxy que delega en un IdP OIDC federado con el SSO corporativo, LDAP sobre LDAPS, UI de administración y worker de sincronización hacia el clúster. Stack contenerizado en Docker Swarm.',
+    tech: ['Nginx', 'OAuth2 Proxy', 'OIDC/Keycloak', 'Apache Knox', 'OpenLDAP', 'Next.js', 'Docker Swarm'],
+    year: '2026',
+    role: 'Diseño + Desarrollo (individual)',
+  },
+  {
+    id: 3,
     title: 'Web Corporativa para Abogada',
     category: 'Corporate / Multilingüe',
     description:
@@ -19,7 +39,7 @@ const projects = [
     code: 'https://github.com/SenanAbb/asmae-web-v2',
   },
   {
-    id: 2,
+    id: 4,
     title: 'ConLaMielEnLosLabios',
     category: 'Full-Stack Portal',
     description:
@@ -28,28 +48,6 @@ const projects = [
     year: '2025',
     role: 'Full Stack',
     code: 'https://github.com/SenanAbb/ConLaMielEnLosLabios',
-  },
-  {
-    id: 3,
-    title: 'Clon de Spotify',
-    category: 'SPA / Frontend',
-    description:
-      'Frontend responsive con navegación por secciones, reproducción simulada y enrutado SPA. Diseño fluido.',
-    tech: ['React', 'Tailwind CSS', 'React Router', 'Fake API'],
-    year: '2024',
-    role: 'Frontend',
-    code: 'https://github.com/SenanAbb/spotify-clone',
-  },
-  {
-    id: 4,
-    title: 'Clon de Trello',
-    category: 'Productivity Tool',
-    description:
-      'Gestión de tareas con drag-and-drop, creación de tableros, columnas y persistencia local.',
-    tech: ['React', 'React DnD', 'Tailwind CSS', 'Context API'],
-    year: '2023',
-    role: 'Frontend',
-    code: 'https://github.com/SenanAbb/trello-clone',
   },
 ];
 
@@ -159,6 +157,11 @@ export const ProjectsSection = () => {
                         >
                           <AiFillGithub className="w-4 h-4" /> Código
                         </a>
+                      )}
+                      {!p.demo && !p.code && (
+                        <span className="chip group-hover:border-bg group-hover:text-bg transition-colors">
+                          Proyecto de empresa · privado
+                        </span>
                       )}
                     </div>
                   </div>
